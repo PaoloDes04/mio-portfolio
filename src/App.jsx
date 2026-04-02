@@ -2,12 +2,12 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Terminal, Shield, Code, User, Mail, Briefcase, 
   GraduationCap, Award, ExternalLink, ChevronRight, 
-  Github, Linkedin, Send, Menu, X, Database, Server, Download
+  Github, Linkedin, Menu, X, Database, Server, Download
 } from 'lucide-react';
 
 // --- UI COMPONENTS ---
 
-// Nuovo componente per le animazioni allo scroll
+// Componente per le animazioni allo scroll
 const RevealOnScroll = ({ children, delay = 0 }) => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef();
@@ -68,10 +68,10 @@ export default function App() {
   const [typedText, setTypedText] = useState('');
   const fullText = "Building Real-World Experience.";
 
-  // Typing effect for Hero
+  // Effetto di digitazione per la Hero
   useEffect(() => {
     let i = 0;
-    setTypedText(''); // Reset iniziale per evitare sdoppiamenti
+    setTypedText('');
     const typingInterval = setInterval(() => {
       if (i < fullText.length) {
         setTypedText(fullText.substring(0, i + 1));
@@ -93,11 +93,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200">
-      {/* Cyber Grid Background */}
+      {/* Background Griglia Cyber */}
       <div className="fixed inset-0 z-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
-      <div className="fixed inset-0 z-0 bg-radial-gradient from-slate-900/20 to-slate-950 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.05) 0%, transparent 70%)' }} />
+      <div className="fixed inset-0 z-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.05) 0%, transparent 70%)' }} />
 
-      {/* Navbar */}
+      {/* Barra di navigazione */}
       <nav className="fixed top-0 w-full z-50 bg-slate-950/80 backdrop-blur-md border-b border-slate-800 transition-all">
         <div className="max-w-6xl mx-auto px-6 h-20 flex items-center justify-between">
           <div className="flex items-center gap-2 text-white font-bold text-xl tracking-tighter">
@@ -105,7 +105,7 @@ export default function App() {
             <span>P.DESIDERIO</span>
           </div>
           
-          {/* Desktop Nav */}
+          {/* Navigazione Desktop */}
           <div className="hidden md:flex items-center gap-8 font-mono text-sm">
             {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
               <button key={item} onClick={() => scrollTo(item.toLowerCase())} className="hover:text-cyan-400 transition-colors">
@@ -117,13 +117,13 @@ export default function App() {
             </button>
           </div>
 
-          {/* Mobile Menu Toggle */}
+          {/* Toggle Menu Mobile */}
           <button className="md:hidden text-slate-300 hover:text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
 
-        {/* Mobile Nav */}
+        {/* Navigazione Mobile */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-20 left-0 w-full bg-slate-900 border-b border-slate-800 py-4 px-6 flex flex-col gap-4 font-mono">
             {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
@@ -135,13 +135,12 @@ export default function App() {
         )}
       </nav>
 
-      {/* Main Content */}
+      {/* Contenuto Principale */}
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-24 space-y-32">
         
-        {/* HERO SECTION */}
+        {/* SEZIONE HERO */}
         <section id="hero" className="min-h-[80vh] flex flex-col-reverse md:flex-row items-center justify-between pt-10 gap-12">
           
-          {/* Testo Hero (Sinistra) */}
           <div className="flex-1 flex flex-col justify-center items-start">
             <Badge className="mb-6 bg-emerald-500/10 text-emerald-400 border-emerald-500/20">
               <span className="inline-block w-2 h-2 rounded-full bg-emerald-400 mr-2 animate-pulse" />
@@ -169,33 +168,26 @@ export default function App() {
             </div>
           </div>
 
-          {/* Immagine Hero (Destra) */}
           <div className="w-full md:w-auto flex justify-center md:justify-end mb-10 md:mb-0 relative">
-            {/* Effetto Bagliore Dietro (Glow) */}
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none" />
-            
-            {/* Contenitore Foto */}
             <div className="relative w-64 h-64 md:w-80 md:h-80 rounded-full border border-cyan-500/30 p-2 backdrop-blur-sm group hover:border-cyan-400/80 transition-all duration-500 hover:shadow-[0_0_40px_rgba(6,182,212,0.2)]">
               <div className="w-full h-full rounded-full overflow-hidden bg-slate-900 flex items-center justify-center relative">
-                
                 <img 
                   src="https://i.imgur.com/L5mGwyc.jpg" 
                   alt="Paolo Desiderio" 
                   className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-500 relative z-10" 
                 />
-                
               </div>
             </div>
           </div>
 
         </section>
 
-        {/* ABOUT & SKILLS SECTION */}
+        {/* SEZIONE ABOUT & SKILLS */}
         <section id="about" className="scroll-mt-32">
           <SectionTitle title="System Profile" subtitle="About Me & Core Competencies" icon={User} />
           
           <div className="grid md:grid-cols-2 gap-12 items-start">
-            {/* About Text */}
             <div className="space-y-6 text-slate-400 leading-relaxed text-lg">
               <p>
                 My journey into technology is driven by a deep curiosity about how complex systems operate—and, more importantly, how to secure them against modern threats.
@@ -213,7 +205,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Skills Grid */}
             <GlowingCard>
               <h3 className="text-white font-bold text-xl mb-6 flex items-center gap-2">
                 <Terminal className="w-5 h-5 text-emerald-400" />
@@ -255,7 +246,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* EXPERIENCE & EDUCATION */}
+        {/* ESPERIENZA & FORMAZIONE */}
         <section id="experience" className="scroll-mt-32">
           <RevealOnScroll>
             <SectionTitle title="Experience & Education" subtitle="My professional and academic timeline" icon={Briefcase} />
@@ -263,7 +254,7 @@ export default function App() {
           
           <div className="grid md:grid-cols-2 gap-8">
             
-            {/* Education Column */}
+            {/* Colonna Formazione */}
             <div className="space-y-6">
               <RevealOnScroll delay={100}>
                 <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-6">
@@ -298,7 +289,7 @@ export default function App() {
               </RevealOnScroll>
             </div>
 
-            {/* Experience & Certs Column */}
+            {/* Colonna Esperienza & Certificazioni */}
             <div className="space-y-6">
               <RevealOnScroll delay={150}>
                 <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-6">
@@ -347,15 +338,13 @@ export default function App() {
           </div>
         </section>
 
-        {/* PROJECTS SECTION */}
+        {/* SEZIONE PROGETTI */}
         <section id="projects" className="scroll-mt-32">
           <SectionTitle title="Featured Builds" subtitle="Proof of work & implementation" icon={Code} />
           
           <div className="grid md:grid-cols-2 gap-8">
-            {/* Project Card 1 */}
             <div className="group rounded-xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-cyan-500/50 transition-colors">
               <div className="h-48 bg-slate-950 border-b border-slate-800 relative flex items-center justify-center overflow-hidden">
-                {/* Abstract UI representation instead of image */}
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900 to-slate-950" />
                 <div className="relative z-10 flex gap-4 opacity-50 group-hover:opacity-100 transition-opacity">
                   <Server className="w-12 h-12 text-cyan-500" />
@@ -366,7 +355,7 @@ export default function App() {
               <div className="p-6">
                 <div className="flex justify-between items-start mb-4">
                   <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors">Tour Operator Management System</h3>
-                  <a href="https://github.com/PaoloDes04/Project_databases" className="p-2 bg-slate-800 rounded-md hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors text-slate-400">
+                  <a href="https://github.com/PaoloDes04/Project_databases" target="_blank" rel="noreferrer" className="p-2 bg-slate-800 rounded-md hover:bg-cyan-500/20 hover:text-cyan-400 transition-colors text-slate-400">
                     <ExternalLink className="w-4 h-4" />
                   </a>
                 </div>
@@ -386,7 +375,6 @@ export default function App() {
               </div>
             </div>
 
-            {/* Project Placeholder Card */}
             <div className="group rounded-xl bg-slate-900/30 border border-slate-800 border-dashed flex flex-col items-center justify-center p-8 text-center min-h-[400px]">
               <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center mb-4">
                 <Terminal className="w-8 h-8 text-slate-500 group-hover:text-cyan-400 transition-colors" />
@@ -402,54 +390,36 @@ export default function App() {
           </div>
         </section>
 
-        {/* CONTACT SECTION */}
+        {/* SEZIONE CONTATTO - Versione con solo Link Social */}
         <section id="contact" className="scroll-mt-32">
           <GlowingCard className="text-center p-12 md:p-20 border-cyan-500/20">
             <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Let's Work Together</h2>
-            <p className="text-slate-400 max-w-2xl mx-auto mb-10 text-lg">
+            <p className="text-slate-400 max-w-2xl mx-auto mb-12 text-lg">
               Whether you have an opportunity, a project, or just want to discuss the latest in cybersecurity, I'm always open to connecting with forward-thinking teams.
             </p>
             
-            <div className="flex flex-col sm:flex-row justify-center gap-4 mb-12">
-              <a href="mailto:paolo19072004@gmail.com" className="flex items-center justify-center gap-2 px-6 py-4 bg-slate-800 text-white rounded-lg font-bold hover:bg-slate-700 transition-colors border border-slate-700">
-                <Mail className="w-5 h-5 text-cyan-400" />
-                <span>paolo19072004@gmail.com</span>
+            <div className="flex flex-col sm:flex-row justify-center gap-6">
+              <a href="mailto:paolo19072004@gmail.com" className="group flex items-center justify-center gap-3 px-8 py-5 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-700 transition-all border border-slate-700 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)]">
+                <Mail className="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform" />
+                <span className="text-lg">paolo19072004@gmail.com</span>
               </a>
-              <a href="https://www.linkedin.com/in/paolo-desiderio-9979b9394/" target="_blank" rel="noreferrer" className="flex items-center justify-center gap-2 px-6 py-4 bg-[#0A66C2] text-white rounded-lg font-bold hover:bg-[#004182] transition-colors border border-[#0A66C2]">
-                <Linkedin className="w-5 h-5" />
-                <span>Connect on LinkedIn</span>
+              <a href="https://www.linkedin.com/in/paolo-desiderio-9979b9394/" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 px-8 py-5 bg-[#0A66C2] text-white rounded-xl font-bold hover:bg-[#004182] transition-all border border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.3)]">
+                <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
+                <span className="text-lg">Connect on LinkedIn</span>
               </a>
             </div>
 
-            {/* Simple Contact Form */}
-            <form className="max-w-xl mx-auto text-left space-y-4" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid grid-cols-2 gap-4">
-                <div className="space-y-1">
-                  <label className="font-mono text-xs text-slate-400 uppercase">Name</label>
-                  <input type="text" placeholder="John Doe" className="w-full bg-slate-950 border border-slate-800 rounded-md px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" />
-                </div>
-                <div className="space-y-1">
-                  <label className="font-mono text-xs text-slate-400 uppercase">Email</label>
-                  <input type="email" placeholder="john@company.com" className="w-full bg-slate-950 border border-slate-800 rounded-md px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all" />
-                </div>
-              </div>
-              <div className="space-y-1">
-                <label className="font-mono text-xs text-slate-400 uppercase">Message</label>
-                <textarea rows="4" placeholder="How can we collaborate?" className="w-full bg-slate-950 border border-slate-800 rounded-md px-4 py-3 text-white focus:outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all resize-none"></textarea>
-              </div>
-              <button type="submit" className="w-full flex items-center justify-center gap-2 px-6 py-4 bg-cyan-500 text-slate-950 rounded-md font-bold hover:bg-cyan-400 transition-all">
-                Initiate Handshake <Send className="w-4 h-4" />
-              </button>
-            </form>
-
+            <div className="mt-16 pt-8 border-t border-slate-800/50 font-mono text-xs text-slate-500 tracking-widest uppercase">
+              Handshake Protocol Ready
+            </div>
           </GlowingCard>
         </section>
 
       </main>
 
-      {/* FOOTER */}
-      <footer className="border-t border-slate-800 bg-slate-950 py-8 relative z-10 text-center">
-        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-4">
+      {/* PIÈ DI PAGINA */}
+      <footer className="border-t border-slate-800 bg-slate-950 py-10 relative z-10 text-center">
+        <div className="max-w-6xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-2 text-white font-bold tracking-tighter opacity-80">
             <Shield className="text-cyan-400 w-5 h-5" />
             <span>P.DESIDERIO</span>
@@ -457,9 +427,9 @@ export default function App() {
           <p className="text-slate-500 text-sm font-mono">
             &copy; {new Date().getFullYear()} Paolo Desiderio. System Secured.
           </p>
-          <div className="flex gap-4">
-            <a href="https://github.com/PaoloDes04" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors"><Github className="w-5 h-5" /></a>
-            <a href="https://www.linkedin.com/in/paolo-desiderio-9979b9394/" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors"><Linkedin className="w-5 h-5" /></a>
+          <div className="flex gap-6">
+            <a href="https://github.com/PaoloDes04" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors"><Github className="w-6 h-6" /></a>
+            <a href="https://www.linkedin.com/in/paolo-desiderio-9979b9394/" target="_blank" rel="noreferrer" className="text-slate-500 hover:text-cyan-400 transition-colors"><Linkedin className="w-6 h-6" /></a>
           </div>
         </div>
       </footer>
