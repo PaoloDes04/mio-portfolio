@@ -399,9 +399,9 @@ export default function App() {
             </p>
             
             <div className="flex flex-col sm:flex-row justify-center gap-6">
-              <a href="mailto:paolo19072004@gmail.com" className="group flex items-center justify-center gap-3 px-8 py-5 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-700 transition-all border border-slate-700 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)]">
+              <a href="mailto:paolodp004@gmail.com" className="group flex items-center justify-center gap-3 px-8 py-5 bg-slate-800 text-white rounded-xl font-bold hover:bg-slate-700 transition-all border border-slate-700 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.1)]">
                 <Mail className="w-6 h-6 text-cyan-400 group-hover:scale-110 transition-transform" />
-                <span className="text-lg">paolo19072004@gmail.com</span>
+                <span className="text-lg">paolodp004@gmail.com</span>
               </a>
               <a href="https://www.linkedin.com/in/paolo-desiderio-9979b9394/" target="_blank" rel="noreferrer" className="group flex items-center justify-center gap-3 px-8 py-5 bg-[#0A66C2] text-white rounded-xl font-bold hover:bg-[#004182] transition-all border border-[#0A66C2] hover:shadow-[0_0_20px_rgba(10,102,194,0.3)]">
                 <Linkedin className="w-6 h-6 group-hover:scale-110 transition-transform" />
