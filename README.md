@@ -65,14 +65,3 @@ I am currently pursuing a degree in Computer Engineering and Cyber Security and 
 
 ---
 *Handcrafted with React & Tailwind. System Secured.*
-
-
-## 3. Salvataggio
-Assicurati di salvare il file premendo `Ctrl + S` (o `Cmd + S` su Mac).
-
-## 4. Pubblicazione su GitHub
-Apri il terminale integrato in Visual Studio Code ed esegui questi comandi in sequenza per caricare il file online:
-
-git add README.md
-git commit -m "Aggiunto file README"
-git push
