@@ -1,14 +1,3 @@
-# 📝 Guida: Aggiungere il README al progetto
-
-Segui questi passaggi per integrare il file di presentazione nel tuo repository GitHub.
-
-## 1. Creazione del file
-Nel tuo progetto su Visual Studio Code, crea un nuovo file nella cartella principale (dove si trova `package.json`) e nominalo esattamente:
-`README.md`
-
-## 2. Inserimento del contenuto
-Copia il blocco di codice qui sotto e incollalo all'interno del file `README.md` appena creato:
-
 # 🛡️ Paolo Desiderio | Personal Portfolio
 
 ![System Status](https://img.shields.io/badge/System%20Status-ONLINE-brightgreen?style=for-the-badge&logo=appveyor)
