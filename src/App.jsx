@@ -162,7 +162,7 @@ export default function App() {
               <button onClick={() => scrollTo('contact')} className="flex items-center justify-center gap-2 px-8 py-4 bg-transparent border border-slate-700 text-white rounded-lg font-bold hover:border-slate-500 hover:bg-slate-800 transition-all">
                 <Mail className="w-5 h-5" /> Contact Me
               </button>
-              <a href="/tuo-cv.pdf" download="Paolo_Desiderio_CV.pdf" className="flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 border border-slate-800 text-cyan-400 rounded-lg font-bold hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all">
+              <a href="Paolo_Desiderio_CV.pdf" download="Paolo_Desiderio_CV.pdf" className="flex items-center justify-center gap-2 px-8 py-4 bg-slate-900 border border-slate-800 text-cyan-400 rounded-lg font-bold hover:border-cyan-500/50 hover:bg-cyan-500/10 transition-all">
                 <Download className="w-5 h-5" /> Download CV
               </a>
             </div>
