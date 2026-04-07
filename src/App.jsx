@@ -314,6 +314,16 @@ export default function App() {
                     <li>Collaborated in agile teams to prototype real-world solutions.</li>
                     <li>Focused on UX/UI principles and performance optimization.</li>
                   </ul>
+                  
+                  {/* Bottoni Attestati */}
+                  <div className="mt-5 flex flex-wrap gap-3">
+                    <a href="https://drive.google.com/file/d/1VoqzZSsImhyWdMHW-MV1SSDx2ReZfY0P/view?usp=drive_link" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 rounded-lg text-xs font-bold transition-all">
+                      <ExternalLink className="w-3.5 h-3.5" /> Basic Certificate
+                    </a>
+                    <a href="https://drive.google.com/file/d/1n6GxIesDRXbm_nhlDz-vpFStSjQGQyhb/view?usp=drive_link" target="_blank" rel="noreferrer" className="flex items-center gap-1.5 px-3 py-1.5 bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 hover:bg-emerald-500/20 hover:border-emerald-500/40 rounded-lg text-xs font-bold transition-all">
+                      <ExternalLink className="w-3.5 h-3.5" /> Advanced Certificate
+                    </a>
+                  </div>
                 </GlowingCard>
               </RevealOnScroll>
 
