@@ -198,11 +198,6 @@ export default function App() {
               <p>
                 Whether it's managing customer interactions in a fast-paced environment or developing full-stack applications with secure authentication, I bring a unique blend of <span className="text-white">technical aptitude and strong soft skills</span> to every team I join.
               </p>
-              <div className="pt-4">
-                <a href="/tuo-cv.pdf" download="Paolo_Desiderio_CV.pdf" className="inline-flex items-center gap-2 px-6 py-3 bg-slate-800/50 border border-slate-700 text-white rounded-lg font-bold hover:border-cyan-500/50 hover:text-cyan-400 transition-all">
-                  <Download className="w-5 h-5" /> Download My CV
-                </a>
-              </div>
             </div>
 
             <GlowingCard>
