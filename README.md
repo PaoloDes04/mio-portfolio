@@ -1,82 +1,89 @@
-🛡️ Paolo Desiderio | Personal Portfolio
+# 📝 Guida: Aggiungere il README al progetto
 
-Welcome to the repository of my personal portfolio. This website is designed to showcase my academic journey, professional experience, and technical projects in the field of Computer Engineering and Cyber Security.
+Segui questi passaggi per integrare il file di presentazione nel tuo repository GitHub.
 
-🔗 Live Demo: paolodes04.github.io/mio-portfolio
+## 1. Creazione del file
+Nel tuo progetto su Visual Studio Code, crea un nuovo file nella cartella principale (dove si trova `package.json`) e nominalo esattamente:
+`README.md`
 
-🚀 Features
+## 2. Inserimento del contenuto
+Copia il blocco di codice qui sotto e incollalo all'interno del file `README.md` appena creato:
 
-Modern Cyber Aesthetic: A sleek, dark-themed UI tailored for a Cyber Security profile.
+# 🛡️ Paolo Desiderio | Personal Portfolio
 
-Responsive Design: Fully optimized for desktop, tablet, and mobile viewing.
+![System Status](https://img.shields.io/badge/System%20Status-ONLINE-brightgreen?style=for-the-badge&logo=appveyor)
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
+![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
 
-Smooth Animations: Built-in scroll reveals and interactive glowing cards.
+Welcome to the repository of my personal portfolio. This website is designed to showcase my academic journey, professional experience, and technical projects in the field of **Computer Engineering and Cyber Security**.
 
-ATS-Friendly CV Integration: Direct download link for my professional resume.
+🔗 **Live Demo:** [paolodes04.github.io/mio-portfolio](https://paolodes04.github.io/mio-portfolio/)
 
-Project Showcase: Detailed section for full-stack and security-related builds.
+## 🚀 Features
 
-🛠️ Tech Stack
+- **Modern Cyber Aesthetic:** A sleek, dark-themed UI tailored for a Cyber Security profile.
+- **Responsive Design:** Fully optimized for desktop, tablet, and mobile viewing.
+- **Smooth Animations:** Built-in scroll reveals and interactive glowing cards.
+- **ATS-Friendly CV Integration:** Direct download link for my professional resume.
+- **Project Showcase:** Detailed section for full-stack and security-related builds.
 
-Frontend: React.js (v18)
+## 🛠️ Tech Stack
 
-Styling: Tailwind CSS
+- **Frontend:** React.js (v18)
+- **Styling:** Tailwind CSS
+- **Icons:** Lucide React
+- **Build Tool:** Vite
+- **Deployment:** GitHub Pages (`gh-pages`)
 
-Icons: Lucide React
-
-Build Tool: Vite
-
-Deployment: GitHub Pages (gh-pages)
-
-💻 Local Setup
+## 💻 Local Setup
 
 If you want to clone this repository and run the project locally, follow these steps:
 
-Prerequisites
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-Make sure you have Node.js installed on your machine.
+### Installation
 
-Installation
+1. **Clone the repository:**
+   git clone https://github.com/PaoloDes04/mio-portfolio.git
 
-Clone the repository:
+2. **Navigate to the project directory:**
+   cd mio-portfolio
 
-git clone [https://github.com/PaoloDes04/mio-portfolio.git](https://github.com/PaoloDes04/mio-portfolio.git)
+3. **Install dependencies:**
+   npm install
 
+4. **Start the development server:**
+   npm run dev
+   *The site will be available at `http://localhost:5173`.*
 
-Navigate to the project directory:
+## 📦 Deployment
 
-cd mio-portfolio
-
-
-Install dependencies:
-
-npm install
-
-
-Start the development server:
-
-npm run dev
-
-
-The site will be available at http://localhost:5173.
-
-📦 Deployment
-
-To deploy updates to GitHub Pages, ensure your changes are committed to the main branch, then run:
+To deploy updates to GitHub Pages, ensure your changes are committed to the `main` branch, then run:
 
 npm run deploy
 
+*This command automatically builds the project and pushes the `dist` folder to the `gh-pages` branch.*
 
-This command automatically builds the project and pushes the dist folder to the gh-pages branch.
-
-📫 Contact
+## 📫 Contact
 
 I am currently pursuing a degree in Computer Engineering and Cyber Security and actively seeking opportunities to apply my skills in real-world scenarios.
 
-Email: paolodp004@gmail.com
+- **Email:** [paolodp004@gmail.com](mailto:paolo19072004@gmail.com)
+- **LinkedIn:** [Paolo Desiderio](https://www.linkedin.com/in/paolo-desiderio-9979b9394/)
+- **GitHub:** [@PaoloDes04](https://github.com/PaoloDes04)
 
-LinkedIn: Paolo Desiderio
+---
+*Handcrafted with React & Tailwind. System Secured.*
 
-GitHub: @PaoloDes04
 
-Handcrafted with React & Tailwind. System Secured.
+## 3. Salvataggio
+Assicurati di salvare il file premendo `Ctrl + S` (o `Cmd + S` su Mac).
+
+## 4. Pubblicazione su GitHub
+Apri il terminale integrato in Visual Studio Code ed esegui questi comandi in sequenza per caricare il file online:
+
+git add README.md
+git commit -m "Aggiunto file README"
+git push
