@@ -2,7 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { 
   Terminal, Shield, Code, User, Mail, Briefcase, 
   GraduationCap, Award, ExternalLink, ChevronRight, 
-  Github, Linkedin, Menu, X, Database, Server, Download, Trophy
+  Github, Linkedin, Menu, X, Database, Server, Download, Trophy,
+  Brain, ShieldAlert, Activity
 } from 'lucide-react';
 
 // --- UI COMPONENTS ---
@@ -106,12 +107,10 @@ export default function App() {
   return (
     <div className="min-h-screen bg-slate-950 text-slate-300 font-sans selection:bg-cyan-500/30 selection:text-cyan-200 overflow-hidden relative">
       
-      {/* --- SFONDO E LUCI AMBIENTALI (NOVITÀ) --- */}
+      {/* --- SFONDO E LUCI AMBIENTALI --- */}
       <div className="fixed inset-0 z-0 bg-[linear-gradient(to_right,#8080800a_1px,transparent_1px),linear-gradient(to_bottom,#8080800a_1px,transparent_1px)] bg-[size:24px_24px] pointer-events-none" />
       <div className="fixed inset-0 z-0 pointer-events-none" style={{ backgroundImage: 'radial-gradient(circle at 50% 0%, rgba(6, 182, 212, 0.05) 0%, transparent 70%)' }} />
-      {/* Orb Ciano in alto a sinistra */}
       <div className="fixed -top-[20%] -left-[10%] w-[50vw] h-[50vw] rounded-full bg-cyan-900/20 blur-[120px] pointer-events-none mix-blend-screen" />
-      {/* Orb Smeraldo in basso a destra */}
       <div className="fixed -bottom-[20%] -right-[10%] w-[50vw] h-[50vw] rounded-full bg-emerald-900/20 blur-[120px] pointer-events-none mix-blend-screen" />
 
       {/* Barra di navigazione dinamica */}
@@ -122,7 +121,6 @@ export default function App() {
             <span>P.DESIDERIO</span>
           </div>
           
-          {/* Navigazione Desktop - Animazione hover migliorata */}
           <div className="hidden md:flex items-center gap-8 font-mono text-sm ml-auto">
             {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
               <button key={item} onClick={() => scrollTo(item.toLowerCase())} className="group relative text-slate-300 hover:text-cyan-400 transition-colors py-2">
@@ -132,13 +130,11 @@ export default function App() {
             ))}
           </div>
 
-          {/* Toggle Menu Mobile */}
           <button className="md:hidden text-slate-300 hover:text-white" onClick={() => setIsMenuOpen(!isMenuOpen)}>
             {isMenuOpen ? <X /> : <Menu />}
           </button>
         </div>
 
-        {/* Navigazione Mobile */}
         {isMenuOpen && (
           <div className="md:hidden absolute top-20 left-0 w-full bg-slate-900 border-b border-slate-800 py-4 px-6 flex flex-col gap-4 font-mono shadow-2xl">
             {['About', 'Experience', 'Projects', 'Contact'].map((item) => (
@@ -150,13 +146,11 @@ export default function App() {
         )}
       </nav>
 
-      {/* Contenuto Principale */}
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-24 space-y-32">
         
         {/* SEZIONE HERO */}
         <section id="hero" className="min-h-[80vh] flex flex-col md:flex-row items-center justify-between pt-10 gap-12">
           
-          {/* Immagine Profilo */}
           <RevealOnScroll delay={100}>
             <div className="w-full md:w-auto flex justify-center md:justify-start mb-10 md:mb-0 relative group">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-64 h-64 md:w-80 md:h-80 bg-cyan-500/20 rounded-full blur-3xl pointer-events-none group-hover:bg-cyan-500/30 transition-all duration-1000 animate-pulse" />
@@ -172,7 +166,6 @@ export default function App() {
             </div>
           </RevealOnScroll>
 
-          {/* Blocco Testo */}
           <div className="flex-1 flex flex-col justify-center items-center md:items-end text-center md:text-right">
             <RevealOnScroll delay={200}>
               <Badge className="mb-6 bg-emerald-500/10 text-emerald-400 border-emerald-500/20 hover:bg-emerald-500/20 transition-colors cursor-default">
@@ -187,7 +180,6 @@ export default function App() {
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-emerald-400">
                   {typedText}
                 </span>
-                {/* Cursore persistente */}
                 <span className="animate-[pulse_1s_ease-in-out_infinite] border-r-4 border-cyan-400 ml-1"></span>
               </h1>
             </RevealOnScroll>
@@ -200,7 +192,6 @@ export default function App() {
 
             <RevealOnScroll delay={500}>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 w-full justify-center md:justify-end">
-                {/* Pulsante Glow continuo */}
                 <button onClick={() => scrollTo('projects')} className="group flex items-center justify-center gap-2 px-8 py-4 bg-cyan-500 text-slate-950 rounded-lg font-bold hover:bg-cyan-400 transition-all shadow-[0_0_20px_rgba(34,211,238,0.2)] hover:shadow-[0_0_30px_rgba(34,211,238,0.5)] hover:-translate-y-1">
                   View My Work <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </button>
@@ -240,7 +231,7 @@ export default function App() {
                 <div>
                   <h4 className="font-mono text-sm text-slate-500 mb-3 uppercase">Security & Dev</h4>
                   <div className="flex flex-wrap gap-2">
-                    {['Cyber Security Fundamentals', 'Python / Django', 'Network Security', 'Linux Environment', 'React / Web Tech'].map(skill => (
+                    {['Cyber Security Fundamentals', 'Machine Learning', 'Python', 'Linux Environment', 'React / Web Tech'].map(skill => (
                       <Badge key={skill} className="bg-slate-800 border-slate-700 text-slate-300 hover:border-cyan-500/50 hover:text-cyan-300 transition-colors cursor-default">
                         {skill}
                       </Badge>
@@ -279,7 +270,6 @@ export default function App() {
           
           <div className="grid md:grid-cols-2 gap-8">
             
-            {/* Colonna Formazione */}
             <div className="space-y-6">
               <RevealOnScroll delay={100}>
                 <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-6">
@@ -314,7 +304,6 @@ export default function App() {
               </RevealOnScroll>
             </div>
 
-            {/* Colonna Esperienza & Certificazioni */}
             <div className="space-y-6">
               <RevealOnScroll delay={150}>
                 <h3 className="text-xl font-bold text-white flex items-center gap-2 mb-6">
@@ -403,9 +392,10 @@ export default function App() {
           <SectionTitle title="Featured Builds" subtitle="Proof of work & implementation" icon={Code} />
           
           <div className="grid md:grid-cols-2 gap-8">
+            
+            {/* PROGETTO 1: Tour Operator */}
             <RevealOnScroll delay={100}>
               <div className="group rounded-xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-cyan-500/50 transition-colors h-full flex flex-col">
-                {/* Nuova Grafica Terminale per Placeholder Progetto */}
                 <div className="h-48 relative flex items-center justify-center overflow-hidden bg-slate-950">
                   <div className="absolute inset-0 bg-[linear-gradient(to_right,#06b6d41a_1px,transparent_1px),linear-gradient(to_bottom,#06b6d41a_1px,transparent_1px)] bg-[size:14px_14px] opacity-20" />
                   <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent z-10" />
@@ -435,7 +425,7 @@ export default function App() {
                   <ul className="text-sm text-slate-300 space-y-2 mb-6">
                     <li className="flex items-center gap-2"><Shield className="w-4 h-4 text-emerald-400" /> Engineered Secure Authentication Systems</li>
                     <li className="flex items-center gap-2"><User className="w-4 h-4 text-cyan-400" /> Implemented Role-Based Access Control (RBAC)</li>
-                    <li className="flex items-center gap-2"><Code className="w-4 h-4 text-purple-400" /> Built Dynamic Review & Filtering Logic</li>
+                    <li className="flex items-center gap-2"><Code className="w-4 h-4 text-cyan-400" /> Built Dynamic Review & Filtering Logic</li>
                   </ul>
                   <div className="flex gap-2">
                     <Badge className="bg-slate-950 text-slate-300 border-slate-800">Django</Badge>
@@ -446,20 +436,54 @@ export default function App() {
               </div>
             </RevealOnScroll>
 
+            {/* PROGETTO 2: URL Phishing ML (NUOVO) */}
             <RevealOnScroll delay={300}>
-              <div className="group rounded-xl bg-slate-900/30 border border-slate-800 border-dashed flex flex-col items-center justify-center p-8 text-center h-full min-h-[400px] hover:bg-slate-900/50 transition-colors">
-                <div className="w-16 h-16 rounded-full bg-slate-800/50 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform">
-                  <Terminal className="w-8 h-8 text-slate-500 group-hover:text-cyan-400 transition-colors" />
+              <div className="group rounded-xl bg-slate-900 border border-slate-800 overflow-hidden hover:border-purple-500/50 transition-colors h-full flex flex-col">
+                <div className="h-48 relative flex items-center justify-center overflow-hidden bg-slate-950">
+                  <div className="absolute inset-0 bg-[linear-gradient(to_right,#a855f71a_1px,transparent_1px),linear-gradient(to_bottom,#a855f71a_1px,transparent_1px)] bg-[size:14px_14px] opacity-20" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-slate-950 to-transparent z-10" />
+                  <div className="relative z-20 flex gap-6 opacity-60 group-hover:opacity-100 transition-all duration-500 group-hover:scale-110">
+                    <Brain className="w-10 h-10 text-purple-500" />
+                    <ShieldAlert className="w-10 h-10 text-rose-500" />
+                  </div>
+                  <div className="absolute top-4 right-4 flex gap-1.5 z-20">
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-slate-700" />
+                    <div className="w-2.5 h-2.5 rounded-full bg-purple-500/50 animate-pulse" />
+                  </div>
+                  <div className="absolute bottom-4 left-4 font-mono text-xs text-purple-500/50 z-20 group-hover:text-purple-400 transition-colors">
+                    <span className="text-purple-500 mr-2">●</span>MODEL_STATUS: DEPLOYED
+                  </div>
                 </div>
-                <h3 className="text-xl font-bold text-slate-300 mb-2">More Projects Compiling...</h3>
-                <p className="text-slate-500 text-sm max-w-xs">
-                  Actively building and learning. New cyber security research and web applications will be deployed here soon.
-                </p>
-                <div className="mt-6 font-mono text-xs text-emerald-500/70 animate-[pulse_2s_ease-in-out_infinite]">
-                  &gt; git commit -m "Continuous Growth"
+                <div className="p-6 flex-1 flex flex-col">
+                  <div className="flex justify-between items-start mb-4">
+                    <h3 className="text-2xl font-bold text-white group-hover:text-purple-400 transition-colors">URL Phishing Detection ML</h3>
+                    <div className="flex gap-2">
+                      <a href="https://www.kaggle.com/datasets/shashwatwork/phishing-dataset-for-machine-learning" target="_blank" rel="noreferrer" title="View Kaggle Dataset" className="p-2 bg-slate-800 rounded-md hover:bg-purple-500/20 hover:text-purple-400 transition-colors text-slate-400 group-hover:-translate-y-1 group-hover:shadow-lg">
+                        <Database className="w-4 h-4" />
+                      </a>
+                      <a href="https://github.com/PaoloDes04/URL-Phishing-Detection-ML" target="_blank" rel="noreferrer" title="View GitHub Code" className="p-2 bg-slate-800 rounded-md hover:bg-purple-500/20 hover:text-purple-400 transition-colors text-slate-400 group-hover:-translate-y-1 group-hover:shadow-lg">
+                        <ExternalLink className="w-4 h-4" />
+                      </a>
+                    </div>
+                  </div>
+                  <p className="text-slate-400 mb-6 text-sm leading-relaxed flex-1">
+                    A proactive Machine Learning model engineered to detect "Zero-Day" phishing domains by analyzing deep mathematical and structural URL features.
+                  </p>
+                  <ul className="text-sm text-slate-300 space-y-2 mb-6">
+                    <li className="flex items-center gap-2"><Activity className="w-4 h-4 text-purple-400" /> Random Forest Ensemble (96%+ Accuracy)</li>
+                    <li className="flex items-center gap-2"><ShieldAlert className="w-4 h-4 text-rose-400" /> Optimized to minimize False Negatives</li>
+                    <li className="flex items-center gap-2"><Terminal className="w-4 h-4 text-emerald-400" /> Interactive real-time Web App via Gradio</li>
+                  </ul>
+                  <div className="flex flex-wrap gap-2">
+                    <Badge className="bg-slate-950 text-slate-300 border-slate-800">Python</Badge>
+                    <Badge className="bg-slate-950 text-slate-300 border-slate-800">Scikit-learn</Badge>
+                    <Badge className="bg-slate-950 text-slate-300 border-slate-800">Gradio</Badge>
+                  </div>
                 </div>
               </div>
             </RevealOnScroll>
+
           </div>
         </section>
 
